@@ -1,0 +1,91 @@
+[workspace]
+members = [
+    # 核心包
+    "packages/stepflow-core",
+    "packages/stepflow-database", 
+    "packages/stepflow-registry",
+    "packages/stepflow-executor",
+    "packages/stepflow-sandbox",
+    "packages/stepflow-api",
+    
+    # 工具包
+    "packages/stepflow-openapi",
+    "packages/stepflow-asyncapi",
+    "packages/stepflow-python",
+    "packages/stepflow-shell",
+    "packages/stepflow-ai",
+    "packages/stepflow-system",
+    
+    # 服务包
+    "packages/stepflow-embedding",
+    "packages/stepflow-search",
+    "packages/stepflow-monitoring",
+    
+    # 二进制
+    "binaries/server",
+    "binaries/cli",
+    "binaries/admin",
+]
+
+resolver = "2"
+
+[workspace.dependencies]
+# 异步运行时
+tokio = { version = "1.0", features = ["full"] }
+async-trait = "0.1"
+
+# 序列化
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# 数据库
+sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "sqlite", "chrono", "uuid"] }
+
+# HTTP 和 Web
+axum = "0.7"
+tower = "0.4"
+tower-http = { version = "0.5", features = ["cors", "trace"] }
+hyper = "0.14"
+reqwest = { version = "0.11", features = ["json"] }
+
+# 错误处理
+thiserror = "1.0"
+anyhow = "1.0"
+
+# 日志
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# 时间
+chrono = { version = "0.4", features = ["serde"] }
+
+# UUID
+uuid = { version = "1.0", features = ["v4", "serde"] }
+
+# 配置
+config = "0.14"
+dotenv = "0.15"
+
+# 安全
+rand = "0.8"
+sha2 = "0.10"
+hmac = "0.12"
+argon2 = "0.5"
+rand_core = "0.6"
+
+# 工具
+clap = { version = "4.0", features = ["derive"] }
+indicatif = "0.17"
+console = "0.15"
+
+# 系统
+num_cpus = "1.0"
+
+# 测试
+criterion = "0.5"
+mockall = "0.12"
+
+# 其他
+futures = "0.3"
+pin-project = "1.0"
+bytes = "1.0" 

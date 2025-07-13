@@ -1,0 +1,26 @@
+[package]
+name = "stepflow-python"
+version = "0.1.0"
+edition = "2021"
+description = "Stepflow Tool System - Python Integration"
+license = "MIT"
+repository = "https://github.com/stepflow/stepflow-toolkit"
+keywords = ["stepflow", "python", "pyo3", "binding"]
+categories = ["api-bindings", "development-tools"]
+
+[dependencies]
+stepflow-core = { path = "../stepflow-core" }
+stepflow-database = { path = "../stepflow-database" }
+stepflow-monitoring = { path = "../stepflow-monitoring" }
+
+pyo3 = { version = "0.19", features = ["extension-module"] }
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tracing = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+futures = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true } 

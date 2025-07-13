@@ -1,0 +1,26 @@
+[package]
+name = "stepflow-admin"
+version = "0.1.0"
+edition = "2021"
+description = "Stepflow Tool System - Admin Tool"
+license = "MIT"
+repository = "https://github.com/stepflow/stepflow-toolkit"
+
+[[bin]]
+name = "stepflow-admin"
+path = "src/main.rs"
+
+[dependencies]
+stepflow-core = { path = "../../packages/stepflow-core" }
+stepflow-database = { path = "../../packages/stepflow-database" }
+stepflow-registry = { path = "../../packages/stepflow-registry" }
+stepflow-executor = { path = "../../packages/stepflow-executor" }
+stepflow-api = { path = "../../packages/stepflow-api" }
+stepflow-monitoring = { path = "../../packages/stepflow-monitoring" }
+stepflow-system = { path = "../../packages/stepflow-system" }
+
+clap = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+tokio = { workspace = true } 

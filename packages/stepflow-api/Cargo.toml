@@ -1,0 +1,69 @@
+[package]
+name = "stepflow-api"
+version = "0.1.0"
+edition = "2021"
+description = "Stepflow Tool System - API Server"
+license = "MIT"
+repository = "https://github.com/stepflow/stepflow-toolkit"
+keywords = ["stepflow", "api", "server", "http"]
+categories = ["api-bindings", "development-tools"]
+
+[dependencies]
+stepflow-core = { path = "../stepflow-core" }
+stepflow-database = { path = "../stepflow-database" }
+stepflow-registry = { path = "../stepflow-registry" }
+stepflow-executor = { path = "../stepflow-executor" }
+stepflow-monitoring = { path = "../stepflow-monitoring" }
+stepflow-sandbox = { path = "../stepflow-sandbox" }
+
+# HTTP 服务器和路由
+axum = { workspace = true }
+tower = { workspace = true }
+tower-http = { workspace = true }
+hyper = { workspace = true }
+
+# 异步运行时
+tokio = { workspace = true }
+futures = { workspace = true }
+
+# 序列化
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+# 认证和安全
+jsonwebtoken = "9.3"
+argon2 = "0.5"
+rand = "0.8"
+
+# 速率限制
+tower_governor = "0.4"
+governor = "0.6"
+
+# 日志和错误处理
+tracing = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+
+# 其他工具
+async-trait = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+url = "2.5"
+mime = "0.3"
+bytes = "1.7"
+regex = "1.10"
+
+# GraphQL (可选)
+async-graphql = "7.0"
+async-graphql-axum = "7.0"
+
+# 开发依赖
+[dev-dependencies]
+tokio-test = "0.4"
+reqwest = { version = "0.12", features = ["json"] }
+tempfile = "3.8"
+wiremock = "0.6"
+
+[features]
+default = ["graphql"]
+graphql = [] 

@@ -1,0 +1,51 @@
+[package]
+name = "stepflow-sandbox"
+version = "0.1.0"
+edition = "2021"
+description = "Stepflow Tool System - Sandbox Environment"
+license = "MIT"
+repository = "https://github.com/stepflow/stepflow-toolkit"
+keywords = ["stepflow", "sandbox", "isolation", "security"]
+categories = ["api-bindings", "development-tools"]
+
+[dependencies]
+stepflow-core = { path = "../stepflow-core" }
+stepflow-database = { path = "../stepflow-database" }
+stepflow-monitoring = { path = "../stepflow-monitoring" }
+
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tracing = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+futures = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+
+# Docker 客户端
+bollard = "0.16"
+
+# 系统调用和进程管理
+nix = "0.27"
+libc = "0.2"
+
+# 配置和序列化
+toml = "0.8"
+
+# 并发和异步
+tokio-util = "0.7"
+tokio-stream = "0.1"
+
+# 错误处理
+eyre = "0.6"
+
+# 日志和监控
+tracing-subscriber = "0.3"
+metrics = "0.21"
+
+[dev-dependencies]
+tokio-test = "0.4"
+tempfile = "3.8"
+serial_test = "3.0" 

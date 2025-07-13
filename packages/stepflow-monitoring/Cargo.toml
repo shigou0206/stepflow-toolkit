@@ -1,0 +1,29 @@
+[package]
+name = "stepflow-monitoring"
+version = "0.1.0"
+edition = "2021"
+description = "Stepflow Tool System - Monitoring and Observability"
+license = "MIT"
+repository = "https://github.com/stepflow/stepflow-toolkit"
+keywords = ["stepflow", "monitoring", "metrics", "observability"]
+categories = ["api-bindings", "development-tools"]
+
+[dependencies]
+stepflow-core = { path = "../stepflow-core" }
+stepflow-database = { path = "../stepflow-database" }
+
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+futures = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+prometheus = "0.13"
+opentelemetry = { version = "0.20", features = ["rt-tokio"] }
+opentelemetry-http = "0.8"
+opentelemetry-jaeger = "0.18" 
