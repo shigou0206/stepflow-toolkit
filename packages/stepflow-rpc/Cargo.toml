@@ -1,0 +1,49 @@
+[package]
+name = "stepflow-rpc"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# 核心异步运行时
+tokio = { version = "1.0", features = ["full"] }
+
+# JSON序列化
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# 网络通信
+tokio-util = { version = "0.7", features = ["codec"] }
+bytes = "1.0"
+
+# 错误处理
+anyhow = "1.0"
+thiserror = "1.0"
+
+# 日志
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+# 异步trait
+async-trait = "0.1"
+
+# UUID生成
+uuid = { version = "1.0", features = ["v4", "serde"] }
+
+# 时间处理
+chrono = { version = "0.4", features = ["serde"] }
+
+# 并发工具
+dashmap = "5.0"
+futures = "0.3"
+
+[dev-dependencies]
+tokio-test = "0.4"
+
+[[example]]
+name = "event_streaming"
+path = "examples/event_streaming.rs"
+
+[features]
+default = []
+server = []
+client = [] 

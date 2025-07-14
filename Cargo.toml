@@ -7,6 +7,7 @@ members = [
     "packages/stepflow-executor",
     "packages/stepflow-sandbox",
     "packages/stepflow-api",
+    "packages/stepflow-rpc",
     
     # 工具包
     "packages/stepflow-openapi",
@@ -37,6 +38,8 @@ async-trait = "0.1"
 # 序列化
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
+
+tree-sitter = "0.25"
 
 # 数据库
 sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "sqlite", "chrono", "uuid"] }
@@ -84,6 +87,9 @@ num_cpus = "1.0"
 # 测试
 criterion = "0.5"
 mockall = "0.12"
+tokio-test = "0.4"
+axum-test = "15.0"
+wiremock = "0.6"
 
 # 其他
 futures = "0.3"
